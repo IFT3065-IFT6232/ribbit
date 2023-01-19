@@ -1,3 +1,3 @@
 HOST = wat
-HOST_INTERPRETER = $${WASM_HOST_INTERPRETER:-node}
+HOST_INTERPRETER = $${WAT_HOST_INTERPRETER:-node}
 include ../../makefile-common.mk

@@ -40,7 +40,7 @@ check:
 	  if [ "$$INTERPRETER" != "" ]; then \
 	    sed -n -e '/;;;input:/p' $$prog | sed -e 's/^;;;input://' | $$INTERPRETER test.$$host > test.$$host.out; \
 	  else \
-	    $$COMPILER test.$$host.exe test.$$host; \
+	    $${COMPILER}test.$$host.exe test.$$host; \
 	    sed -n -e '/;;;input:/p' $$prog | sed -e 's/^;;;input://' | ./test.$$host.exe > test.$$host.out; \
 	  fi; \
 	  sed -e '1,/;;;expected:/d' -e 's/^;;;//' $$prog | diff - test.$$host.out; \
